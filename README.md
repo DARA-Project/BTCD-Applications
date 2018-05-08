@@ -17,6 +17,8 @@ The goal in this project was to use BTCD to validate invariants around validatin
 
 ### 2. Papers Read (Academic and Non-Academic)
 
+These were the sources I read to try to get a grasp of Bitcoin and how the protocol operated at a high level. The articles presented some more concrete details about the implementation of the protocol and brought the things the paper discussed a bit more down to earth. The paper is still the key resource. It's fairly short and shouldn't take very long to read.
+
 [Bitcoin Paper (Original)](https://bitcoin.org/bitcoin.pdf)
 
 Other Articles on the Paper:
@@ -29,6 +31,16 @@ Other Articles on the Paper:
 <a name="BTCD" />
 
 ### 3. BTCD Information
+
+As indicated in the instructions, please make sure that BTCD is installed on your machine using glide to avoid future issues. The process to update BTCD and its dependencies is also described.
+
+[BTCD Readme for Main Repo](https://github.com/btcsuite/btcd)
+
+[Webchat (I used this frequently to interact with the developers)](https://webchat.freenode.net/?channels=btcd)
+
+[BTCD Install Instructions](https://github.com/btcsuite/btcd/blob/master/docs/README.md)
+
+[BTCD Documentation](https://github.com/btcsuite/btcd/tree/master/docs)
 
 <a name="Scripts" />
 
