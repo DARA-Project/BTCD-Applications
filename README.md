@@ -22,6 +22,7 @@ The goal in this project was to use BTCD to validate invariants around validatin
 Other Articles on the Paper:
 
 [Cracking the Bitcoin Whitepaper (what I used to get a better grasp of it)](https://medium.com/@FolusoOgunlana/cracking-the-bitcoin-white-paper-c5f479ce748d)
+
 [Bitcoin White Paper in 4 minutes](https://hackernoon.com/dissecting-the-bitcoin-whitepaper-in-four-minutes-5c8c5e5f8010)
 
 
