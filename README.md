@@ -50,8 +50,10 @@ As indicated in the instructions, please make sure that BTCD is installed on you
 
 -Block chain constructed using btcd/blockchain/chain.go. Can use parameters defined in btcd/chaincfg/params.go to create a simulated
 Bitcoin network.
+
 -New transaction created by generating a new tx (transaction message) in btcd/wire/msgtx.go. Can construct an actual
 transaction from this message using btcutil/tx.go.
+
 -Constructing a new block first requires generating a new block header in btcd/wire/blockheader.go. There are numerous
 parameters required here including version (set to 1), hash of the previous block, merkleRootHash (set as the hash of the transaction), 
 difficulty bits, and nonce. Nonce was randomly generated. Difficulty bits is something that needs to be tuned so we can do a reasonable
