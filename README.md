@@ -62,9 +62,11 @@ convert it to a bitcoint block in btcutil/block.go.
 
 **3.2 BTCD Helpful Links**
 
-Useful example of how to set up a simple SimNet using the command line BTCD utilities (https://gist.github.com/davecgh/2992ed85d41307e794f6)
+[Useful example of how to set up a simple SimNet using the command line BTCD utilities](https://gist.github.com/davecgh/2992ed85d41307e794f6)
 
-[A list of useful scripts for testing purposes] (https://gist.github.com/davecgh). I highly recommend using these as a reference point to set up tests. I found them very useful.
+[A list of useful scripts for testing purposes](https://gist.github.com/davecgh). 
+
+I highly recommend using these as a reference point to set up tests. I found them very useful.
 
 <a name="Scripts" />
 
