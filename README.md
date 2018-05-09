@@ -8,6 +8,7 @@
     2. [BTCD Helpful Links](#Links)
 4. [Details About Scripts In the Repo](#Scripts)
     1. [peer](#peer)
+    2. [testA](#testA)
 5. [Progress, Issues, and Things to Do](#Future)
 
 <a name="General" />
@@ -89,6 +90,20 @@ This folder contains the following scripts:
 [rpc.cert](https://github.com/sumahmood/Directed-Studies/blob/master/peer/rpc.cert) - This is the rpc.cert file for the BTCD server. This shouldn't strictly be necessary as the ~/.btcd/rpc.cert is what's used for the server, but I just kept this here from an earlier failed install. Can probably be deleted, but it's not really necessary as the cert file is linked to the ~/.btcd folder.
 
 [sever](https://github.com/sumahmood/Directed-Studies/blob/master/peer/server) - Binary file for the 416 assignment server. Just ignore it.
+
+<a name="testA" />
+
+**4.2 testA**
+
+Garbage Folder (should use a better name; but this folder is fairly useless and consists of failed experiments; likely better to just ignore it, but feel free to look through it to see how functions may be used):
+
+[other.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/garbage/other.go) - This script tries to create an initial coinbase transaction and adds more transactions to try to mine them into a block. I tried to generate a block header manually, add transactions, and then process them into a block. It didn't work out too well, so I just left it and asked the BTCD people about a better way to do it. They suggested using RPC to mine blocks, so I abandoned this experiment.
+
+[peer.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/garbage/peer.go) - This script is basically a copy of [this script](https://github.com/btcsuite/btcd/blob/master/blockchain/example_test.go) in the main BTCD repo. I tried to get it to work locally to try to see what was happening. Was able to get the basic script to work. Tried to extend it by creating a server, but the configurations required a lot of setup. On discussion with the BTCD dudes...it seemed better to just set the RPC server up using the config file instead of manually, so I abandoned further experimentation on this script.
+
+tmp Folder (this stuff is more useful):
+
+
 
 <a name="Future" />
 
