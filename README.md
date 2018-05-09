@@ -4,9 +4,9 @@
 1. [General Information](#General)
 2. [Papers Read (Academic and Non-Academic)](#Papers)
 3. [BTCD Information](#BTCD)
-  1.[BTCD Insights](#Insights)
+    1. [BTCD Insights](#Insights)
 4. [Details About Scripts In the Repo](#Scripts)
-  1. [peer](#peer)
+    1. [peer](#peer)
 5. [Progress, Issues, and Things to Do](#Future)
 
 <a name="General" />
