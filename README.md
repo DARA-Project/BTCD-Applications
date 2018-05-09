@@ -5,6 +5,7 @@
 2. [Papers Read (Academic and Non-Academic)](#Papers)
 3. [BTCD Information](#BTCD)
     1. [BTCD Insights](#Insights)
+    2. [BTCD Helpful Links](#Links)
 4. [Details About Scripts In the Repo](#Scripts)
     1. [peer](#peer)
 5. [Progress, Issues, and Things to Do](#Future)
@@ -47,6 +48,24 @@ As indicated in the instructions, please make sure that BTCD is installed on you
 
 **3.1 BTCD Insights**
 
+-Block chain constructed using btcd/blockchain/chain.go. Can use parameters defined in btcd/chaincfg/params.go to create a simulated
+Bitcoin network.
+-New transaction created by generating a new tx (transaction message) in btcd/wire/msgtx.go. Can construct an actual
+transaction from this message using btcutil/tx.go.
+-Constructing a new block first requires generating a new block header in btcd/wire/blockheader.go. There are numerous
+parameters required here including version (set to 1), hash of the previous block, merkleRootHash (set as the hash of the transaction), 
+difficulty bits, and nonce. Nonce was randomly generated. Difficulty bits is something that needs to be tuned so we can do a reasonable
+amount of mining. We take the blockheader and change it to a msgblock using btcd/wire/msgblock.go. Finally, we take this msgblock and
+convert it to a bitcoint block in btcutil/block.go.
+
+<a name="Links" />
+
+**3.2 BTCD Helpful Links**
+
+Useful example of how to set up a simple SimNet using the command line BTCD utilities (https://gist.github.com/davecgh/2992ed85d41307e794f6)
+
+[A list of useful scripts for testing purposes] (https://gist.github.com/davecgh). I highly recommend using these as a reference point to set up tests. I found them very useful.
+
 <a name="Scripts" />
 
 ### 4. Details About Scripts in the Repo
@@ -54,6 +73,7 @@ As indicated in the instructions, please make sure that BTCD is installed on you
 <a name="peer" />
 
 **4.1 peer**
+
 This folder contains the following scripts:
 
 [btcdRPCScript.go](https://github.com/sumahmood/Directed-Studies/blob/master/peer/btcdRPCScript.go) - This script basically uses [this script](https://github.com/btcsuite/btcd/blob/master/rpcclient/examples/btcwalletwebsockets/main.go) to try to connect to a running local RPC server using websockets. It gets a list of unspent transactions and shuts down the connection with the server after 10 seconds.
