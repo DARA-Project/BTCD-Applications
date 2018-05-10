@@ -103,7 +103,9 @@ Garbage Folder (should use a better name; general experiments in trying to get b
 
 tmp Folder (this stuff is more useful):
 
+[rpcTry1.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/rpcTry1.go) - This script is basically a copy of [this script] (https://github.com/btcsuite/btcd/blob/master/blockchain/example_test.go) at its base but tries to extend it by adding a new address and setting up a server to pay it. There was a problem in that I would need to manually create server parameters using the config struct and the BTCD guys said it would just be better to set up the server by running btcd and basically sending transactions using the command line utility, but it would require modifying the config files.
 
+[rpcTry2.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/rpcTry2.go) - This script is a copy of the btcd [main script](https://github.com/btcsuite/btcd/blob/master/btcd.go). I tried to go through what was happening when I ran it and was planning to extend but instead decided to go the command line utilities route.
 
 <a name="Future" />
 
