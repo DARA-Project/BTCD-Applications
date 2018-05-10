@@ -83,14 +83,6 @@ This folder contains the following scripts:
 
 [btcdRPCScript.go](https://github.com/sumahmood/Directed-Studies/blob/master/peer/btcdRPCScript.go) - This script basically uses [this script](https://github.com/btcsuite/btcd/blob/master/rpcclient/examples/btcwalletwebsockets/main.go) to try to connect to a running local RPC server using websockets. It gets a list of unspent transactions and shuts down the connection with the server after 10 seconds.
 
-[peer.go](https://github.com/sumahmood/Directed-Studies/blob/master/peer/peer.go) - This is my solution for WT2 2016 CPSC 416 A2. It was the first part of my directed studies term, so I just kept it here for completeness. It's not relevant to BTCD.
-
-[peerFile](https://github.com/sumahmood/Directed-Studies/blob/master/peer/peersFile) - This file contains the IP and port of the peers for the aforementioned assignment. Once again, feel free to ignore this.
-
-[rpc.cert](https://github.com/sumahmood/Directed-Studies/blob/master/peer/rpc.cert) - This is the rpc.cert file for the BTCD server. This shouldn't strictly be necessary as the ~/.btcd/rpc.cert is what's used for the server, but I just kept this here from an earlier failed install. Can probably be deleted, but it's not really necessary as the cert file is linked to the ~/.btcd folder.
-
-[sever](https://github.com/sumahmood/Directed-Studies/blob/master/peer/server) - Binary file for the 416 assignment server. Just ignore it.
-
 <a name="testA" />
 
 **4.2 testA**
@@ -103,9 +95,13 @@ Garbage Folder (should use a better name; general experiments in trying to get b
 
 tmp Folder (this stuff is more useful):
 
-[rpcTry1.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/rpcTry1.go) - This script is basically a copy of [this script] (https://github.com/btcsuite/btcd/blob/master/blockchain/example_test.go) at its base but tries to extend it by adding a new address and setting up a server to pay it. There was a problem in that I would need to manually create server parameters using the config struct and the BTCD guys said it would just be better to set up the server by running btcd and basically sending transactions using the command line utility, but it would require modifying the config files.
+[rpcTry1.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/rpcTry1.go) - This script is basically a copy of [this script](https://github.com/btcsuite/btcd/blob/master/blockchain/example_test.go) at its base but tries to extend it by adding a new address and setting up a server to pay it. There was a problem in that I would need to manually create server parameters using the config struct and the BTCD guys said it would just be better to set up the server by running btcd and basically sending transactions using the command line utility, but it would require modifying the config files.
 
 [rpcTry2.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/rpcTry2.go) - This script is a copy of the btcd [main script](https://github.com/btcsuite/btcd/blob/master/btcd.go). I tried to go through what was happening when I ran it and was planning to extend but instead decided to go the command line utilities route.
+
+[testA.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/testA.go) - This script does numerous things by building off [a script in BTCD](https://github.com/btcsuite/btcd/blob/master/blockchain/example_test.go). The following steps are performed: (1) create an underlying db object to store the blockchain; (2) create a blockchain instance for a simulation network on a local machine (using the appropriate underlying parameters); (3) create a new transaction using the wire package and link it to a previous transaction and generate its hash; (4) create an address to pay to along with an underlying public-private key; (5) create a block template; (6) create a mining pool to which transactions are sent and set its parameters; (7) process a block from transaction created earlier and sent to the mempool; and (8) check whether the block just created was actually added to the blockchain. This was the most comprehensive experiment I did and it taught me a lot about what BTCD was doing under the hood. Many of my insights came from this script. This was useful in determining what we should log when we're executing BTCD and where invariants would most likely have been violated in terms of the DARA project goals.
+
+[testANew.go](https://github.com/btcsuite/btcd/blob/master/blockchain/example_test.go) - This script builds on [testA.go](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/testA.go). Instead of stopping at just processing a block; instead, it tries to create a CPU miner by passing through various, dummy parameters in this case, to try to generate a certain number of blocks. This was not the best approach to generating blocks. The developers said the best way to do this would be using a utility called btcctl on the command line and making calls to the RPC server.
 
 <a name="Future" />
 
