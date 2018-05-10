@@ -10,6 +10,9 @@
     1. [peer](#peer)
     2. [testA](#testA)
 5. [Progress, Issues, and Things to Do](#Future)
+    1. [Progress](#Progress)
+    2. [Issues](#Issues)
+    3. [Future Tasks](#Tasks)
 
 <a name="General" />
 
@@ -81,7 +84,7 @@ I highly recommend using these as a reference point to set up tests. I found the
 
 [Readme File](https://github.com/sumahmood/Directed-Studies/blob/master/peer/README.md)
 
-<a name="testA" />
+<a name="testA"5. />
 
 **4.2 testA**
 
@@ -92,3 +95,26 @@ I highly recommend using these as a reference point to set up tests. I found the
 <a name="Future" />
 
 ### 5. Progress, Issues, and Things to Do
+
+<a name="Progress" />
+
+**5.1 Progress**
+
+This details all the progress I've made. The config files referred to below are placed in the config folder. The purpose here was to try to set up a local Simnet (a local simulated bitcoin peer-to-peer network) that can construct a chain and take in transactions which miners can use to mine blocks and validate new blocks before being added to the chain. The key goal was to create an architecture where multiple RPC servers, each with their own underlying blockchain versions (in the database). Miners mine new transactions into blocks, which are then validated and added to the blockchain based on the longest blockchain invariant (the network always accepts the longest valid blockchain as the true blockchain and discards any others).
+
+1) To start up a simnet, the recommended process is detailed [here](https://gist.github.com/davecgh/2992ed85d41307e794f6).
+
+2) Was able to get the config files set up to run btcd. The config file itself is placed in ~/.btcd/btcd.conf, which is essentially used to specify various configurations for the server. The config file includes information about how to set up the configuration parameters in the file. I've included a sample config file in the config folder for btcd.conf which should be helpful in getting started.
+
+3) Set up a wallet with a new Simnet address using btcwallet. The wallet also uses a config file that has various settings. I've included my version of the config file for reference. The advantage of using a config file once again is that you don't have to manually specify the paramaters on the command line. The config file is in ~/.btcwallet/btcwallet.conf.
+
+4) Followed the rest of the setup process detailed in (1) to get the RPC server running and was able to connect to a local network with a peer and miner ready to send transactions to mine blocks.
+
+<a name="Issues" />
+
+**5.2 Issues**
+
+<a name="Tasks" />
+
+**5.3 Future Tasks**
+
