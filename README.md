@@ -6,6 +6,7 @@
 3. [BTCD Information](#BTCD)
     1. [BTCD Insights](#Insights)
     2. [BTCD Helpful Links](#Links)
+    3. [Transcripts of Chats with Developers](#Chats)
 4. [Details About Scripts In the Repo](#Scripts)
     1. [peer](#peer)
     2. [testA](#testA)
@@ -74,6 +75,10 @@ convert it to a bitcoint block in btcutil/block.go.
 
 I highly recommend using these as a reference point to set up tests. I found them very useful.
 
+<a name="Chats" />
+
+**3.3 Transcripts of Chats with Developers**
+
 <a name="Scripts" />
 
 ### 4. Details About Scripts in the Repo
@@ -84,7 +89,7 @@ I highly recommend using these as a reference point to set up tests. I found the
 
 [Readme File](https://github.com/sumahmood/Directed-Studies/blob/master/peer/README.md)
 
-<a name="testA"5. />
+<a name="testA" />
 
 **4.2 testA**
 
@@ -102,6 +107,8 @@ I highly recommend using these as a reference point to set up tests. I found the
 
 This details all the progress I've made. The config files referred to below are placed in the config folder. The purpose here was to try to set up a local Simnet (a local simulated bitcoin peer-to-peer network) that can construct a chain and take in transactions which miners can use to mine blocks and validate new blocks before being added to the chain. The key goal was to create an architecture where multiple RPC servers, each with their own underlying blockchain versions (in the database). Miners mine new transactions into blocks, which are then validated and added to the blockchain based on the longest blockchain invariant (the network always accepts the longest valid blockchain as the true blockchain and discards any others).
 
+This was valuable from the DARA point of view because setting up the system in this way allows us to change as little of the underlying code as possible and gives a lot of control over the configuration parameters without having to manually set them up. Our goal is to verify invariants, in particular around the new blocks that are accepted into the chain and verification of the longest chain. So, by setting up the network in this way, we can focus on setting up the logging in the underlying BTCD code instead of expending too much effort in setting up a local bitcoin test network.
+
 1) To start up a simnet, the recommended process is detailed [here](https://gist.github.com/davecgh/2992ed85d41307e794f6).
 
 2) Was able to get the config files set up to run btcd. The config file itself is placed in ~/.btcd/btcd.conf, which is essentially used to specify various configurations for the server. The config file includes information about how to set up the configuration parameters in the file. I've included a sample config file in the config folder for btcd.conf which should be helpful in getting started.
@@ -113,6 +120,12 @@ This details all the progress I've made. The config files referred to below are 
 <a name="Issues" />
 
 **5.2 Issues**
+
+There were two issues that are presently holding me back. The architecture we want to set up is detailed here. 
+
+One of the issues around [this script]([here](https://gist.github.com/davecgh/2992ed85d41307e794f6) relates to the fact that the wallet doesn't get updated with Bitcoin as the gist indicates. My belief is that this problem arises from this [open issue](https://github.com/btcsuite/btcwallet/issues/496) in BTCD as this is the error message received by the wallet when it tries to connect to the RPC server. We need an open wallet while doing our experimentation to enable transactions to be processed in BTCD. 
+
+The other issue relates to connecting peers. I still need to sort out the right way forward in connecting peers to the RPC servers, but the first problem is more pressing.
 
 <a name="Tasks" />
 
