@@ -79,6 +79,10 @@ I highly recommend using these as a reference point to set up tests. I found the
 
 **3.3 Transcripts of Chats with Developers**
 
+[Adding nodes](https://github.com/DARA-Project/Directed-Studies/blob/master/chats/AddingNodes.txt)
+
+[Generating blocks](https://github.com/DARA-Project/Directed-Studies/blob/master/chats/GenerateBlocks.txt)
+
 <a name="Scripts" />
 
 ### 4. Details About Scripts in the Repo
