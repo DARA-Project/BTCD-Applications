@@ -111,9 +111,9 @@ This was valuable from the DARA point of view because setting up the system in t
 
 1) To start up a simnet, the recommended process is detailed [here](https://gist.github.com/davecgh/2992ed85d41307e794f6).
 
-2) Was able to get the config files set up to run btcd. The config file itself is placed in ~/.btcd/btcd.conf, which is essentially used to specify various configurations for the server. The config file includes information about how to set up the configuration parameters in the file. I've included a sample config file in the config folder for btcd.conf which should be helpful in getting started.
+2) Was able to get the config files set up to run btcd. The config file itself is placed in ~/.btcd/btcd.conf, which is essentially used to specify various configurations for the server. The config file includes information about how to set up the configuration parameters in the file. I've included my config file (not the original one) [here](https://github.com/DARA-Project/Directed-Studies/blob/master/config/btcd.conf) in the config folder for btcd.conf which should be helpful in getting started.
 
-3) Set up a wallet with a new Simnet address using btcwallet. The wallet also uses a config file that has various settings. I've included my version of the config file for reference. The advantage of using a config file once again is that you don't have to manually specify the paramaters on the command line. The config file is in ~/.btcwallet/btcwallet.conf.
+3) Set up a wallet with a new Simnet address using btcwallet. The wallet also uses a config file that has various settings. I've included my version of the config file for reference. The advantage of using a config file once again is that you don't have to manually specify the paramaters on the command line. The config file is in ~/.btcwallet/btcwallet.conf. I've, once again, included my config file (not the original one) [here](https://github.com/DARA-Project/Directed-Studies/blob/master/config/btcwallet.conf) in the config folder for btcwallet.conf which should be helpful in getting started.
 
 4) Followed the rest of the setup process detailed in 1. to get the RPC server running and was able to connect to a local network with a peer and miner ready to send transactions to mine blocks.
 
