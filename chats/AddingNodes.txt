@@ -1,0 +1,8 @@
+[12:24] == goman [80bd4c71@gateway/web/freenode/ip.128.189.76.113] has joined #btcd
+[12:24] <goman> thanks again stevenroose
+[12:26] <goman> I ended up generating a testnet address using (https://www.bitaddress.org) but I'm unsure if this is the same as regtest, 
+but now the address issue has gone away. I noticed that to add peers to regtest, I'd have to go and update the addresses of peers in the 
+peers.json file in regtest. However, I was unsure about whether it's even possible to run and isolated network on one machine or if I need 
+to have multiple machines running btcd for this to work?
+[13:14] <stevenroose> goman: there is an RPC command for that
+[13:14] <stevenroose> search for "node" its btcctl node add --perm or something
