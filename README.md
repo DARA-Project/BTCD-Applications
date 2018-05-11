@@ -115,7 +115,7 @@ This was valuable from the DARA point of view because setting up the system in t
 
 3) Set up a wallet with a new Simnet address using btcwallet. The wallet also uses a config file that has various settings. I've included my version of the config file for reference. The advantage of using a config file once again is that you don't have to manually specify the paramaters on the command line. The config file is in ~/.btcwallet/btcwallet.conf.
 
-4) Followed the rest of the setup process detailed in (1) to get the RPC server running and was able to connect to a local network with a peer and miner ready to send transactions to mine blocks.
+4) Followed the rest of the setup process detailed in 1. to get the RPC server running and was able to connect to a local network with a peer and miner ready to send transactions to mine blocks.
 
 <a name="Issues" />
 
@@ -123,7 +123,7 @@ This was valuable from the DARA point of view because setting up the system in t
 
 There were two issues that are presently holding me back. The architecture we want to set up is detailed here. 
 
-One of the issues around [this script]([here](https://gist.github.com/davecgh/2992ed85d41307e794f6) relates to the fact that the wallet doesn't get updated with Bitcoin as the gist indicates. My belief is that this problem arises from this [open issue](https://github.com/btcsuite/btcwallet/issues/496) in BTCD as this is the error message received by the wallet when it tries to connect to the RPC server. We need an open wallet while doing our experimentation to enable transactions to be processed in BTCD. 
+One of the issues around [this script](https://gist.github.com/davecgh/2992ed85d41307e794f6) relates to the fact that the wallet doesn't get updated with Bitcoin as the gist indicates. My belief is that this problem arises from this [open issue](https://github.com/btcsuite/btcwallet/issues/496) in BTCD as this is the error message received by the wallet when it tries to connect to the RPC server. We need an open wallet while doing our experimentation to enable transactions to be processed in BTCD. 
 
 The other issue relates to connecting peers. I still need to sort out the right way forward in connecting peers to the RPC servers, but the first problem is more pressing.
 
