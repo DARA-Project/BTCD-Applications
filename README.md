@@ -121,13 +121,22 @@ This was valuable from the DARA point of view because setting up the system in t
 
 **5.2 Issues**
 
-There were two issues that are presently holding me back. The architecture we want to set up is detailed here. 
+There were three issues that are presently holding me back. The architecture we want to set up is detailed here. 
 
-One of the issues around [this script](https://gist.github.com/davecgh/2992ed85d41307e794f6) relates to the fact that the wallet doesn't get updated with Bitcoin as the gist indicates. My belief is that this problem arises from this [open issue](https://github.com/btcsuite/btcwallet/issues/496) in BTCD as this is the error message received by the wallet when it tries to connect to the RPC server. We need an open wallet while doing our experimentation to enable transactions to be processed in BTCD. 
+We need to figure out how to run multiple RPC servers locally. There is an issue regarding contention around the blocks_ffldb (database type used in BTCD) where a new instance of the RPC server reads from the same underlying database and multiple servers can't modify the same underlying database as blocks get added to the blockchain. I tried to modify btcd.go (in the main folder) to accomplish this whereby I tried to use a timestamp to create the underlying database to avoid issues with contention. I tried to modify line 27 in this file (blockDbNamePrefix = "blocks") so a different file path based on the timestamp but this was unsuccessful. I asked the developers whether it was possible to create more than RPC server locally in a Simnet. They said it was possibly but I didn't get much more than that.
 
-The other issue relates to connecting peers. I still need to sort out the right way forward in connecting peers to the RPC servers, but the first problem is more pressing.
+One of the issues around [this script](https://gist.github.com/davecgh/2992ed85d41307e794f6) relates to the fact that the wallet doesn't get updated with Bitcoin as the gist indicates. My belief is that this problem arises from this [open issue](https://github.com/btcsuite/btcwallet/issues/496) in BTCD as this is the error message received by the wallet when it tries to connect to the RPC server. We need an open wallet while doing our experimentation to enable transactions to be processed in BTCD.
+
+The other issue relates to connecting peers. I still need to sort out the right way forward in connecting peers to the RPC servers, but the first two problems are more pressing.
 
 <a name="Tasks" />
 
 **5.3 Future Tasks**
 
+The following tasks need to be performed in the future:
+
+(1) Need to figure out what's going on with the issue with adding bitcoin to the wallet. I would suggest contacting the developers to determine whether this issue is still outstanding, and if so, when they intend to go about fixing it. The other approach is to try to fix it yourself.
+
+(2) Figure out how to run multiple RPC servers locally so we can have multiple underlying instances of the blockchain so we can add or remove nodes to simulate how nodes handle the situation when the blockchain is out of date and verify the verification process for the longest blockchain. This will also involve fixing issue 3. which concerns adding peers to the blockchain.
+
+(3) Instrument BTCD with DARA. I've indicated the files and functions that I think will be useful to instrument in terms of verifying invariants in the BTCD section above, but as you learn more about BTCD, you might be able to uncover things that I missed.
