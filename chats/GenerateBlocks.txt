@@ -1,0 +1,7 @@
+<stevenroose> goman: there are RPC methods that do exactly this
+[03:05] == anome [~anome@unaffiliated/anome] has quit [Client Quit]
+[03:05] <stevenroose> generate n blocks in simnet
+[03:05] <stevenroose> I think they are called generate or generateblocks or so
+[03:05] <stevenroose> you don't have to do it manually
+[03:05] <stevenroose> unless you want to do it
+[03:05] <stevenroose> in the mining package there is a cpuminer that you can use to generate blocks
