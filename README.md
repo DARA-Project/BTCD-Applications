@@ -135,8 +135,8 @@ The other issue relates to connecting peers. I still need to sort out the right 
 
 The following tasks need to be performed in the future:
 
-(1) Need to figure out what's going on with the issue with adding bitcoin to the wallet. I would suggest contacting the developers to determine whether this issue is still outstanding, and if so, when they intend to go about fixing it. The other approach is to try to fix it yourself.
+1) Need to figure out what's going on with the issue with adding bitcoin to the wallet. I would suggest contacting the developers to determine whether this issue is still outstanding, and if so, when they intend to go about fixing it. The other approach is to try to fix it yourself.
 
-(2) Figure out how to run multiple RPC servers locally so we can have multiple underlying instances of the blockchain so we can add or remove nodes to simulate how nodes handle the situation when the blockchain is out of date and verify the verification process for the longest blockchain. This will also involve fixing issue 3. which concerns adding peers to the blockchain.
+2) Figure out how to run multiple RPC servers locally so we can have multiple underlying instances of the blockchain so we can add or remove nodes to simulate how nodes handle the situation when the blockchain is out of date and verify the verification process for the longest blockchain. This will also involve fixing issue 3. which concerns adding peers to the blockchain.
 
-(3) Instrument BTCD with DARA. I've indicated the files and functions that I think will be useful to instrument in terms of verifying invariants in the BTCD section above, but as you learn more about BTCD, you might be able to uncover things that I missed.
+3) Instrument BTCD with DARA. I've indicated the files and functions that I think will be useful to instrument in terms of verifying invariants in the BTCD section above, but as you learn more about BTCD, you might be able to uncover things that I missed.
