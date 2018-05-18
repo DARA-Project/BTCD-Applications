@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package garbage
+package main
 
 import (
 	"fmt"
@@ -10,6 +10,7 @@ import (
 	"time"
 	"log"
 	"strconv"
+	"os"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/peer"
 	"github.com/btcsuite/btcd/wire"

@@ -88,7 +88,7 @@ func main() {
 	trans2 := btcutil.NewTx(str)
 	
 	miningPolicy := mining.Policy{BlockMinWeight: 1, BlockMaxWeight: 1000, BlockMinSize: 1, BlockMaxSize: 2048, BlockPrioritySize: 100, TxMinFreeFee: amt}
-	// from btcd/mempool/mempool_test.go
+	// from btcd/mempool/mempool_test.go. Sets transaction pool policy.
 	txPoolPolicy := mempool.Policy{
 				DisableRelayPriority: true,
 				FreeTxRelayLimit:     15.0,
@@ -108,6 +108,8 @@ func main() {
 			SigCache:         nil,
 			AddrIndex:        nil,
 		}
+
+	// Createss a new transaction pool which, along with the mining policy is use to generate a block templates
 	txPool := mempool.New(configPoolPolicy)
 	txPool.MaybeAcceptTransaction(trans2, true, false) // returns chainHash, and txdescription (add those values later)
 	medianTime := blockchain.NewMedianTime()
@@ -117,6 +119,7 @@ func main() {
 
 	valNew := [1]btcutil.Address{addr}
 
+	// This creates a CPU miner that mines blocks based on the block template and the transaction pool policy
 	cpuMiner := cpuminer.New(&cpuminer.Config{
 		ChainParams:            &chaincfg.SimNetParams,
 		BlockTemplateGenerator: templateGen,
@@ -129,42 +132,4 @@ func main() {
 	})
 
 	cpuMiner.GenerateNBlocks(2)
-/*
-	type Config struct {
-	// ChainParams identifies which chain parameters the cpu miner is
-	// associated with.
-	ChainParams *chaincfg.Params
-
-	// BlockTemplateGenerator identifies the instance to use in order to
-	// generate block templates that the miner will attempt to solve.
-	BlockTemplateGenerator *mining.BlkTmplGenerator
-
-	// MiningAddrs is a list of payment addresses to use for the generated
-	// blocks.  Each generated block will randomly choose one of them.
-	MiningAddrs []btcutil.Address
-
-	// ProcessBlock defines the function to call with any solved blocks.
-	// It typically must run the provided block through the same set of
-	// rules and handling as any other block coming from the network.
-	ProcessBlock func(*btcutil.Block, blockchain.BehaviorFlags) (bool, error)
-
-	// ConnectedCount defines the function to use to obtain how many other
-	// peers the server is connected to.  This is used by the automatic
-	// persistent mining routine to determine whether or it should attempt
-	// mining.  This is useful because there is no point in mining when not
-	// connected to any peers since there would no be anyone to send any
-	// found blocks to.
-	ConnectedCount func() int32
-
-	// IsCurrent defines the function to use to obtain whether or not the
-	// block chain is current.  This is used by the automatic persistent
-	// mining routine to determine whether or it should attempt mining.
-	// This is useful because there is no point in mining if the chain is
-	// not current since any solved blocks would be on a side chain and and
-	// up orphaned anyways.
-	IsCurrent func() bool
-}
-*/
-
-
 }
