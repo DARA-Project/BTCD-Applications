@@ -62,6 +62,8 @@ func main() {
 	}
 	log.Printf("Block count: %d", blockCount)
 	
+	// Create a new transaction object and send it to the server. Used dummy parameters (currently the server rejects this transaction 
+	// because it treats it is an orphan transaction; likely an issue due to not linking with the original genesis block)
 	var array = []btcjson.TransactionInput{{Txid: "e6da89de7a6b8508ce8f371a3d0535b04b5e108cb1a6e9284602d3bfd357c018", Vout: 1}}
 	addr, err := btcutil.DecodeAddress("SW8yPHHVAeedS5JMsACPuARdb3AxidHUkv", &chaincfg.SimNetParams)
 	if err != nil {
