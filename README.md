@@ -10,7 +10,10 @@
 **What Works:** Peers are able to connect and then disconnect.<br />
 **What Doesn't Work:** Everything works.<br />
 
-[CreatBlockChainAndPaymentAddress.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateBlockchainAndPaymentAddress.go) -
+[CreateBlockChainAndPaymentAddress.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateBlockchainAndPaymentAddress.go) -This application creates a block chain and tries to instantiate a payment address. It was one of the earliest scripts, so there isn't very much going on here. I was interesting in understanding how payment addresses work.
+**Goal:** Understanding how payment addresses work and setting up a chain work.<br />
+**What Works:** Sets up a blockchain and creates a Bitcoin payment address.<br />
+**What Doesn't Work:** Everything works.<br />
 
 [CreateTransactionBlockAndAddToBlockchain.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateTransactionBlockAndAddToBlockchain.go) -
 
