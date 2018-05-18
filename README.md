@@ -15,10 +15,18 @@
 **What Works:** Sets up a blockchain and creates a Bitcoin payment address.<br />
 **What Doesn't Work:** Everything works.<br />
 
-[CreateTransactionBlockAndAddToBlockchain.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateTransactionBlockAndAddToBlockchain.go) -
+[CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go) - <br />
+**Goal:** <br />
+**What Works:** <br />
+**What Doesn't Work:** <br />
 
-[CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go) -
-
-[CreateTransactionsForMempoolAndMineBlocks.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateTransactionsForMempoolAndMineBlocks.go) -
+[CreateTransactionsForMempoolAndMineBlocks.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateTransactionsForMempoolAndMineBlocks.go) - <br />
+**Goal:** <br />
+**What Works:** <br />
+**What Doesn't Work:** <br />
 
 [RunBTCDMainLocally.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/RunBTCDMainLocally.go) -
+<br />
+**Goal:** <br />
+**What Works:** <br />
+**What Doesn't Work:** <br />
