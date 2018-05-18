@@ -5,12 +5,12 @@
 **What Works:** Establishing notification handlers and getting the block count.<br />
 **What Doesn't Work:** Creating and sending a transaction to the server to mine.<br />
 
-[ConnectPeers.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/ConnectPeers.go) - This application is basically a copy [of](https://github.com/btcsuite/btcd/blob/master/peer/example_test.go) in the main BTCD repo. Creates an inbound peer and outbound peer. Inbound peer listens for connection from outbound peer, establishes connection, and disconnects.
+[ConnectPeers.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/ConnectPeers.go) - This application is basically a copy [of](https://github.com/btcsuite/btcd/blob/master/peer/example_test.go) in the main BTCD repo. Creates an inbound peer and outbound peer. Inbound peer listens for connection from outbound peer, establishes connection, and disconnects.<br />
 **Goal:** Try to connect multiple peers using the BTCD API.<br />
 **What Works:** Peers are able to connect and then disconnect.<br />
 **What Doesn't Work:** Everything works.<br />
 
-[CreateBlockChainAndPaymentAddress.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateBlockchainAndPaymentAddress.go) -This application creates a block chain and tries to instantiate a payment address. It was one of the earliest scripts, so there isn't very much going on here. I was interesting in understanding how payment addresses work.
+[CreateBlockChainAndPaymentAddress.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/CreateBlockchainAndPaymentAddress.go) -This application creates a block chain and tries to instantiate a payment address. It was one of the earliest scripts, so there isn't very much going on here. I was interesting in understanding how payment addresses work.<br />
 **Goal:** Understanding how payment addresses work and setting up a chain work.<br />
 **What Works:** Sets up a blockchain and creates a Bitcoin payment address.<br />
 **What Doesn't Work:** Everything works.<br />
