@@ -81,7 +81,7 @@ func main() {
 		Sequence:         1,
 	}
 
-	// back to transaction stuff
+	// Add TxIn and TxOut values to generate a new transaction
 	str.AddTxIn(&dummyTxIn)
 	str.AddTxOut(&dummyTxOut)
 
@@ -109,7 +109,7 @@ func main() {
 			AddrIndex:        nil,
 		}
 
-	// Createss a new transaction pool which, along with the mining policy is use to generate a block templates
+	// Creates a new transaction pool which, along with the mining policy is use to generate a block templates
 	txPool := mempool.New(configPoolPolicy)
 	txPool.MaybeAcceptTransaction(trans2, true, false) // returns chainHash, and txdescription (add those values later)
 	medianTime := blockchain.NewMedianTime()
@@ -131,5 +131,6 @@ func main() {
 		IsCurrent:              func() bool {return true},
 	})
 
+	// Uses the CPU miner to generate 2 blocks
 	cpuMiner.GenerateNBlocks(2)
 }

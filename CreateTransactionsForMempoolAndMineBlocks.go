@@ -71,7 +71,7 @@ func main() {
 		PkScript: dummyPkScript,
 	}
 
-	// back to transaction stuff
+	// Add TxIn and TxOut values to generate a new transaction
 	str.AddTxIn(&dummyTxIn)
 	str.AddTxOut(&dummyTxOut)
 
@@ -84,7 +84,7 @@ func main() {
 	}
 	
 	miningPolicy := mining.Policy{BlockMinWeight: 1, BlockMaxWeight: 1000, BlockMinSize: 1, BlockMaxSize: 2048, BlockPrioritySize: 100, TxMinFreeFee: amt}
-	// from btcd/mempool/mempool_test.go
+	// from btcd/mempool/mempool_test.go. Sets transaction pool policy.
 	txPoolPolicy := mempool.Policy{
 				DisableRelayPriority: true,
 				FreeTxRelayLimit:     15.0,
@@ -104,6 +104,8 @@ func main() {
 			SigCache:         nil,
 			AddrIndex:        nil,
 		}
+
+	// Creates a new transaction pool which, along with the mining policy is use to generate a block templates
 	txPool := mempool.New(configPoolPolicy)
 	txPool.MaybeAcceptTransaction(trans2, true, false) // returns chainHash, and txdescription (add those values later)
 	medianTime := blockchain.NewMedianTime()
@@ -112,7 +114,6 @@ func main() {
 	templateGen := mining.NewBlkTmplGenerator(&miningPolicy, &chaincfg.SimNetParams, txPool, chain, medianTime, sigCache, hashCache)
 
 	// Genrate address and pay to it
-
 	blockTemplate, err := templateGen.NewBlockTemplate(addr)
 	if err != nil {
 		fmt.Printf("Error generating address and paying to it %v\n", err)
@@ -122,8 +123,11 @@ func main() {
 
 	val := chain.MainChainHasBlock(blockToSolve.Hash())
 
+	// Should return false as we haven't processes the block
 	fmt.Printf("Does main chain have block? %v\n", val)
 
+
+	// Process the block and check to make sure it's been added
 	isMainChain, isOrphan, err := chain.ProcessBlock(blockToSolve,
     	blockchain.BFNone) // In github.com/btcsuite/btcd/blob/master/blockchain/process.go. Would be good to test this further.
 	                       // Flags defined in process.go. BF.None indicates no flags.
