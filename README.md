@@ -30,3 +30,5 @@
 **Goal:** Attempt to run multiple BTCD processes by modifying the blockDB prefix so there is no contention on the underlying database for each process we spawn.<br />
 **What Works:** Unable to get this to work.<br />
 **What Doesn't Work:** Need to work on getting this up and running.<br />
+
+[rpc.cert] - This file is important to running the applications so please leave it here. It's not being used in terms of building the applications so you don't need to worry much about it.
