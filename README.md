@@ -31,4 +31,4 @@
 **What Works:** Unable to get this to work.<br />
 **What Doesn't Work:** Need to work on getting this up and running.<br />
 
-[rpc.cert] - This file is important to running the applications so please leave it here. It's not being used in terms of building the applications so you don't need to worry much about it.
+[rpc.cert](https://github.com/DARA-Project/BTCD-Applications/blob/master/rpc.cert) - This file is important to running the applications so please leave it here. It's not being used in terms of building the applications so you don't need to worry much about it.
