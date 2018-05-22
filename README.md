@@ -5,6 +5,8 @@
 **What Works:** Establishing notification handlers and getting the block count.<br />
 **What Doesn't Work:** Creating and sending a transaction to the server to mine.<br />
 
+![ConnectAndAddBlocksToServer img](https://github.com/DARA-Project/BTCD-Applications/blob/master/images/btcdRPCScript%20img.jpg)
+
 [ConnectPeers.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/ConnectPeers.go) - This application is basically a copy [of](https://github.com/btcsuite/btcd/blob/master/peer/example_test.go) in the main BTCD repo. Creates an inbound peer and outbound peer. Inbound peer listens for connection from outbound peer, establishes connection, and disconnects.<br />
 **Goal:** Try to connect multiple peers using the BTCD API.<br />
 **What Works:** Peers are able to connect and then disconnect.<br />
