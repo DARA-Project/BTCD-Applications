@@ -7,10 +7,7 @@
     1. [BTCD Insights](#Insights)
     2. [BTCD Helpful Links](#Links)
     3. [Transcripts of Chats with Developers](#Chats)
-4. [Details About Scripts In the Repo](#Scripts)
-    1. [peer](#peer)
-    2. [testA](#testA)
-5. [Progress, Issues, and Things to Do](#Future)
+4. [Progress, Issues, and Things to Do](#Future)
     1. [Progress](#Progress)
     2. [Issues](#Issues)
     3. [Future Tasks](#Tasks)
@@ -85,29 +82,11 @@ I highly recommend using these as a reference point to set up tests. I found the
 
 <a name="Scripts" />
 
-### 4. Details About Scripts in the Repo
-
-<a name="peer" />
-
-**4.1 peer**
-
-[Readme File](https://github.com/sumahmood/Directed-Studies/blob/master/peer/README.md)
-
-<a name="testA" />
-
-**4.2 testA**
-
-[Readme File - Garbage Folder](https://github.com/sumahmood/Directed-Studies/blob/master/testA/garbage/README.md)
-
-[Readme File - tmp Folder](https://github.com/sumahmood/Directed-Studies/blob/master/testA/tmp/README.md)
-
-<a name="Future" />
-
-### 5. Progress, Issues, and Things to Do
+### 4. Progress, Issues, and Things to Do
 
 <a name="Progress" />
 
-**5.1 Progress**
+**4.1 Progress**
 
 This details all the progress I've made. The config files referred to below are placed in the config folder. The purpose here was to try to set up a local Simnet (a local simulated bitcoin peer-to-peer network) that can construct a chain and take in transactions which miners can use to mine blocks and validate new blocks before being added to the chain. The key goal was to create an architecture where multiple RPC servers, each with their own underlying blockchain versions (in the database); [shown here](https://github.com/DARA-Project/Directed-Studies/blob/master/images/RPCServerInteraction.jpg). Miners mine new transactions into blocks, which are then validated and added to the blockchain based on the longest blockchain invariant (the network always accepts the longest valid blockchain as the true blockchain and discards any others).
 
@@ -123,7 +102,7 @@ This was valuable from the DARA point of view because setting up the system in t
 
 <a name="Issues" />
 
-**5.2 Issues**
+**4.2 Issues**
 
 There were three issues that are presently holding me back. The architecture we want to set up is detailed here. 
 
@@ -135,7 +114,7 @@ The other issue relates to connecting peers. I still need to sort out the right 
 
 <a name="Tasks" />
 
-**5.3 Future Tasks**
+**4.3 Future Tasks**
 
 The following tasks need to be performed in the future:
 
