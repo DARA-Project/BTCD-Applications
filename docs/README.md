@@ -9,7 +9,6 @@
 4. [Progress, Issues, and Things to Do](#Future)
     1. [Progress](#Progress)
     2. [Issues](#Issues)
-    3. [Future Tasks](#Tasks)
 
 <a name="General" />
 
@@ -106,15 +105,3 @@ We need to figure out how to run multiple RPC servers locally. There is an issue
 One of the issues around [this script](https://gist.github.com/davecgh/2992ed85d41307e794f6) relates to the fact that the wallet doesn't get updated with Bitcoin as the gist indicates. My belief is that this problem arises from this [open issue](https://github.com/btcsuite/btcwallet/issues/496) in BTCD as this is the error message received by the wallet when it tries to connect to the RPC server. We need an open wallet while doing our experimentation to enable transactions to be processed in BTCD.
 
 The other issue relates to connecting peers. I still need to sort out the right way forward in connecting peers to the RPC servers, but the first two problems are more pressing.
-
-<a name="Tasks" />
-
-**4.3 Future Tasks**
-
-The following tasks need to be performed in the future:
-
-1) Need to figure out what's going on with the issue with adding bitcoin to the wallet. I would suggest contacting the developers to determine whether this issue is still outstanding, and if so, when they intend to go about fixing it. The other approach is to try to fix it yourself.
-
-2) Figure out how to run multiple RPC servers locally so we can have multiple underlying instances of the blockchain so we can add or remove nodes to simulate how nodes handle the situation when the blockchain is out of date and verify the verification process for the longest blockchain. This will also involve fixing issue 3. which concerns adding peers to the blockchain.
-
-3) Instrument BTCD with DARA. I've indicated the files and functions that I think will be useful to instrument in terms of verifying invariants in the BTCD section above, but as you learn more about BTCD, you might be able to uncover things that I missed.
