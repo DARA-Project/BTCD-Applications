@@ -8,7 +8,6 @@
     2. [BTCD Helpful Links](#Links)
 4. [Progress, Issues, and Things to Do](#Future)
     1. [Progress](#Progress)
-    2. [Issues](#Issues)
 
 <a name="General" />
 
@@ -64,7 +63,7 @@ convert it to a bitcoint block in btcutil/block.go.
 
 **3.2 BTCD Helpful Links**
 
-[Useful example of how to set up a simple SimNet using the command line BTCD utilities](https://gist.github.com/davecgh/2992ed85d41307e794f6)
+[Useful example of how to set up a simple SimNet using the command line BTCD utilities](https://gist.github.com/davecgh/2992ed85d41307e794f6) - There is a BTCWallet issue where bitcoin doesn't get added to the wallet as suggested by this script. See issues for what's going on with it.
 
 [A list of useful scripts for testing purposes](https://gist.github.com/davecgh). 
 
