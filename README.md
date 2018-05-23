@@ -105,4 +105,4 @@ These are my local copies of the config files that I used to test BTCD. The [doc
 1) [btcd.conf](https://github.com/DARA-Project/BTCD-Applications/blob/master/config/btcd.conf): ~/.btcd/btcd.conf<br />
 2) [btcwallet.conf](https://github.com/DARA-Project/BTCD-Applications/blob/master/config/btcwallet.conf): ~/.btcwallet/btcwallet.conf
 
-See section 4.1 of the docs folder for more information on how they are used.
+See section [4.1](https://github.com/DARA-Project/BTCD-Applications/tree/master/docs) of the docs folder for more information on how they are used.
