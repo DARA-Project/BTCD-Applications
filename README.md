@@ -89,6 +89,8 @@ The purpose of these applications was to set up a working application that could
 **What Works:** Unable to get this to work.<br />
 **What Doesn't Work:** Need to work on getting this up and running.<br />
 
+![RunBTCDMainLocally img](https://github.com/DARA-Project/BTCD-Applications/blob/master/images/RunBTCDMainLocally%20img.jpg)
+
 <a name="App7" />
 
 **2.7 rpc.cert**
