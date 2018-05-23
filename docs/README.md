@@ -1,4 +1,4 @@
-# Directed-Studies (BTCD)
+# BTCD Applications Documentation
 
 ### Table of Contents
 1. [General Information](#General)
