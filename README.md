@@ -16,7 +16,7 @@
 
 ### 1. Approaches and General Information
 
-The purpose of these applications was to set up a working application that could be used to test Bitcoin invariants that could be tested using DARA from dynamic execution of these applications. The primary interest from our perspective is the validation that happens before a block is added to the blockchain after being mined and the validation process for the longest blockchain across multiple peers. There were two approaches here:<br />
+The purpose of these applications was to set up a working application that could be used to test Bitcoin invariants that could be tested using DARA from dynamic execution of these applications. The primary interest from our perspective is the validation that happens before a block is added to the blockchain after being mined and the validation process for the longest blockchain across multiple peers. There were two approaches here:<br /><br />
 (1) Write Applications in Go: This was the original approach that I used that involved modifying developer tests in an attempt to set up a blockchain and transactions that could be mined by peers to try to add blocks to the blockchain. The developers suggested using the command line utility for testing purposes in comparison to writing applications manually.<br /><br />
 (2) Config Files: Use config confiles and a command line utility called [BTCCTL](https://github.com/btcsuite/btcd/tree/master/cmd/btcctl) within BTCD to set up an RPC server and blockchain instance to which blocks are added. The config files discussed below were used in this approach. The developers suggested using this approach for testing over writing applications manually in Go that utilized BTCD.
 
