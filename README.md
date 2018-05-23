@@ -3,13 +3,13 @@
 ### Table of Contents
 1. [Approaches and General Information](#General)
 2. [BTCD Applications](#Apps)
-    1. ConnectAndAddBlocksToServer.go(#App1)
-    2. ConnectPeers.go(#App2)
-    3. CreateBlockChainAndPaymentAddress.go(#App3)
-    4. CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go(#App4)
-    5. CreateTransactionsForMempoolAndMineBlocks.go(#App5)
-    6. RunBTCDMainLocally.go(#App6)
-    7. rpc.cert(#App7)
+    1. [ConnectAndAddBlocksToServer.go](#App1)
+    2. [ConnectPeers.go](#App2)
+    3. [CreateBlockChainAndPaymentAddress.go](#App3)
+    4. [CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go](#App4)
+    5. [CreateTransactionsForMempoolAndMineBlocks.go](#App5)
+    6. [RunBTCDMainLocally.go](#App6)
+    7. [rpc.cert](#App7)
 3. [Config Files](#Config)
 
 <a name="General" />
@@ -17,7 +17,7 @@
 ### 1. Approaches and General Information
 
 The purpose of these applications was to set up a working application that could be used to test Bitcoin invariants that could be tested using DARA from dynamic execution of these applications. The primary interest from our perspective is the validation that happens before a block is added to the blockchain after being mined and the validation process for the longest blockchain across multiple peers. There were two approaches here:<br />
-(1) Write Applications in Go: This was the original approach that I used that involved modifying developer tests in an attempt to set up a blockchain and transactions that could be mined by peers to try to add blocks to the blockchain. The developers suggested using the command line utility for testing purposes in comparison to writing applications manually.<br />
+(1) Write Applications in Go: This was the original approach that I used that involved modifying developer tests in an attempt to set up a blockchain and transactions that could be mined by peers to try to add blocks to the blockchain. The developers suggested using the command line utility for testing purposes in comparison to writing applications manually.<br /><br />
 (2) Config Files: Use config confiles and a command line utility called [BTCCTL](https://github.com/btcsuite/btcd/tree/master/cmd/btcctl) within BTCD to set up an RPC server and blockchain instance to which blocks are added. The config files discussed below were used in this approach. The developers suggested using this approach for testing over writing applications manually in Go that utilized BTCD.
 
 <a name="Apps" />
@@ -100,7 +100,7 @@ The purpose of these applications was to set up a working application that could
 ### 3. Config Files
 
 These are my local copies of the config files that I used to test BTCD. The [docs](https://github.com/DARA-Project/BTCD-Applications/tree/master/docs) folder section 4.1 contains more information about scripts that can be used with these config files. Please note that config files are placed in the following folders: <br />
-(1) btcd.conf: ~/.btcd/btcd.conf<br />
+(1) btcd.conf: ~/.btcd/btcd.conf<br /><br />
 (2) btcwallet.conf: ~/.btcwallet/btcwallet.conf
 
 See section 4.1 of the docs folder for more information on how they are used.
