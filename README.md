@@ -1,5 +1,15 @@
 # BTCD Applications (Experiments with BTCD)
 
+### Table of Contents
+1. [Approaches and General Information](#General)
+2. [BTCD Applications](#Apps)
+    1. ConnectAndAddBlocksToServer.go(#App1)
+    2. ConnectPeers.go(#App2)
+    3. CreateBlockChainAndPaymentAddress.go(#App3)
+    4. CreateTransactionsForMempoolAndGenerateMultipleBlocksUsingCPUMiner.go(#App4)
+    5. CreateTransactionsForMempoolAndMineBlocks.go (#App5)
+3. [Config Files](#Config)
+
 [ConnectAndAddBlocksToServer.go](https://github.com/DARA-Project/BTCD-Applications/blob/master/ConnectAndAddBlockToServer.go) - This application used an example file from the main BTCD repo [here](https://github.com/btcsuite/btcd/blob/master/rpcclient/examples/btcdwebsockets/main.go). The application creates RPC notification handlers, connects to a local BTCD server, and tries to get the current block count in the blockchain. Subsequently, it tries to create a new transactions and sends the transaction to the server. Finally, it shuts down the connection with the server.<br />
 **Goal:** Set up an RPC server and try to send it transactions that the CPU miner can mine on the server.<br />
 **What Works:** Establishing notification handlers and getting the block count.<br />
