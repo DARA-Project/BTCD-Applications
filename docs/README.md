@@ -6,7 +6,6 @@
 3. [BTCD Information](#BTCD)
     1. [BTCD Insights](#Insights)
     2. [BTCD Helpful Links](#Links)
-    3. [Transcripts of Chats with Developers](#Chats)
 4. [Progress, Issues, and Things to Do](#Future)
     1. [Progress](#Progress)
     2. [Issues](#Issues)
@@ -71,14 +70,6 @@ convert it to a bitcoint block in btcutil/block.go.
 [A list of useful scripts for testing purposes](https://gist.github.com/davecgh). 
 
 I highly recommend using these as a reference point to set up tests. I found them very useful.
-
-<a name="Chats" />
-
-**3.3 Transcripts of Chats with Developers**
-
-[Adding nodes](https://github.com/DARA-Project/Directed-Studies/blob/master/chats/AddingNodes.txt)
-
-[Generating blocks](https://github.com/DARA-Project/Directed-Studies/blob/master/chats/GenerateBlocks.txt)
 
 <a name="Scripts" />
 
